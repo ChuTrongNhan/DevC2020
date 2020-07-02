@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <div class="card">
+      <h1 class="title">Mini Game</h1>
+      <div class="a-block">
+        <input type="number" id="guess-number" />
+      </div>
+      <div class="a-block">
+        <button id="guess-button" class="btn">GUESS</button>
+      </div>
+      <div class="a-block messages">
+        <div class="message" id="lower">The answer is actually lower than you think...</div>
+        <div class="message" id="higher">You may want to guess higher!</div>
+        <div class="message" id="correct">Yesss, you've GOT IT!</div>
+      </div>
+      <div id="counter" class="a-block guess-counter">You have 10 guesses left!</div>
+    </div>
+  </body>
+  <script>
+    const answer = Math.floor(Math.random() * 11);
+
+    const button = document.getElementById("guess-button");
+    
+    const input = document.getElementById("guess-number"); 
+  
+    const higher = document.getElementById("higher");
+    const lower = document.getElementById("lower");
+    const correct = document.getElementById("correct");
+    const counter = document.getElementById("counter");
+
+    let count = 10;
+    
+    button.addEventListener('click', () => {
+      higher.style.display = (input.value < answer) ? 'block' : 'none';
+      lower.style.display = (input.value > answer) ? 'block' : 'none';
+      correct.style.display = (input.value == answer) ? 'block' : 'none';
+      --count;
+      counter.innerHTML = 'You have ' + count + ' guesses left!';
+      if (count <= 0) {
+        button.disabled = true;
+        window.alert("YOU'VE RAN OUT OF GUESSES! RELOAD THE PAGE!")
+      }
+    });
+  </script>
+</html>

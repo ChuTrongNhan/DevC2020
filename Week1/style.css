@@ -1,0 +1,65 @@
+.card {
+  text-align: center;
+  width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  box-shadow: -1px 10px 34px -17px rgba(0,0,0,0.75);
+  border-radius: 15px;
+}
+
+.messages {
+  height: 50px;
+}
+
+.a-block {
+  margin: 10px;
+}
+
+input {
+  font-size: 20px;
+}
+
+.message {
+  display: none;
+}
+
+#lower {
+  height: 50px;
+  line-height: 50px;
+  background: rgb(255,196,85);
+  background: linear-gradient(90deg, rgba(255,196,85,0) 0%, rgba(255,132,116,1) 50%, rgba(255,70,173,0) 100%);
+}
+
+#higher {
+  height: 50px;
+  line-height: 50px;
+  background: rgb(85,255,176);
+  background: linear-gradient(90deg, rgba(85,255,176,0) 0%, rgba(130,80,255,1) 50%, rgba(70,254,255,0) 100%);
+}
+
+#correct {
+  height: 50px;
+  line-height: 50px;
+  background: rgb(85,255,167);
+  background: linear-gradient(90deg, rgba(85,255,167,0) 0%, rgba(116,255,142,1) 50%, rgba(70,210,255,0) 100%);
+}
+
+.guess-counter {
+  background: gray;
+  height: 30px;
+  color: wheat;
+  line-height: 30px;
+}
+
+h1 {
+  color: gray;
+}
+
+.btn {
+  background: white;
+  border: 1px solid gray;
+  padding: 10px;
+  border-radius: 40px;
+  color: gray;
+  outline: none;
+}

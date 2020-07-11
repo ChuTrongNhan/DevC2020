@@ -5,8 +5,10 @@ import { MyText, MyBoldText, MyBlackText } from "../MyText";
 const Block = (props) => {
   return (
     <View style={styles.block}>
-      <MyText style={styles.number}>{props.number}</MyText>
-      <MyBlackText style={styles.title}>{props.title}</MyBlackText>
+      <MyText size={22}>{props.number}</MyText>
+      <MyBlackText size={18} color={"lightgray"}>
+        {props.title}
+      </MyBlackText>
     </View>
   );
 };
@@ -35,13 +37,6 @@ const styles = StyleSheet.create({
   block: {
     alignItems: "center",
     width: 100,
-  },
-  number: {
-    fontSize: 22,
-  },
-  title: {
-    fontSize: 18,
-    color: "lightgray",
   },
 });
 

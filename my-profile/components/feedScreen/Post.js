@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { StyleSheet, View, Text, Image, TouchableOpacity } from "react-native";
 import { MyBoldText } from "../MyText";
 import { AntDesign, FontAwesome5 } from "@expo/vector-icons";
+import { SCREENS } from "../../constants";
 
 const Post = (props) => {
   const [countLike, setCountLike] = useState(100);
@@ -12,16 +13,19 @@ const Post = (props) => {
 
   return (
     <View style={styles.post}>
-      <TouchableOpacity style={styles.postHead} onPress={props.goToProfile}>
+      <TouchableOpacity
+        style={styles.postHead}
+        onPress={() => props.goTo(SCREENS.home)}
+      >
         <Image
           style={styles.avatar}
           source={require("../../assets/images/16.jpg")}
         />
-        <MyBoldText>Skye Miles</MyBoldText>
+        <MyBoldText>Daisy Johnson</MyBoldText>
       </TouchableOpacity>
-      <View>
+      <TouchableOpacity onPress={() => props.goTo(props.imgSource)}>
         <Image style={styles.postImage} source={props.imgSource} />
-      </View>
+      </TouchableOpacity>
       <View style={styles.postAction}>
         <TouchableOpacity onPress={likeHandle}>
           <AntDesign
@@ -43,7 +47,7 @@ const Post = (props) => {
         <AntDesign
           style={styles.iconHeart}
           name="heart"
-          size={24}
+          size={18}
           color="black"
         />
         <MyBoldText>{countLike} Likes</MyBoldText>
@@ -62,10 +66,10 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   avatar: {
-    width: 50,
-    height: 50,
+    width: 40,
+    height: 40,
     borderRadius: 90,
-    marginEnd: 10,
+    marginEnd: 8,
   },
   postImage: {
     width: "100%",
@@ -74,7 +78,7 @@ const styles = StyleSheet.create({
   postAction: {
     flexDirection: "row",
     paddingVertical: 15,
-    borderBottomColor: "lightgray",
+    borderBottomColor: "#f0f0f0",
     borderBottomWidth: 1,
     paddingHorizontal: 10,
   },
@@ -83,8 +87,8 @@ const styles = StyleSheet.create({
   },
   postLike: {
     flexDirection: "row",
-    paddingVertical: 15,
-    borderBottomColor: "lightgray",
+    paddingVertical: 10,
+    borderBottomColor: "#f0f0f0",
     borderBottomWidth: 1,
     paddingHorizontal: 10,
   },

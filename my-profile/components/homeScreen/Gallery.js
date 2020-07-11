@@ -1,5 +1,6 @@
 import React from "react";
 import { StyleSheet, View, Image, Dimensions } from "react-native";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 const Gallery = (props) => {
   const images = [
@@ -20,28 +21,36 @@ const Gallery = (props) => {
       <View style={styles.galleryRow}>
         {images.slice(0, centerImgData).map((item) => {
           return (
-            <Image
+            <TouchableOpacity
               key={item.id}
-              source={item.imgSource}
-              style={{
-                ...styles.image,
-                height: Math.random() * 100 + 100,
-              }}
-            />
+              onPress={() => props.goTo(item.imgSource)}
+            >
+              <Image
+                source={item.imgSource}
+                style={{
+                  ...styles.image,
+                  height: Math.random() * 100 + 100,
+                }}
+              />
+            </TouchableOpacity>
           );
         })}
       </View>
       <View style={styles.galleryRow}>
         {images.slice(centerImgData).map((item) => {
           return (
-            <Image
+            <TouchableOpacity
               key={item.id}
-              source={item.imgSource}
-              style={{
-                ...styles.image,
-                height: Math.random() * 100 + 100,
-              }}
-            />
+              onPress={() => props.goTo(item.imgSource)}
+            >
+              <Image
+                source={item.imgSource}
+                style={{
+                  ...styles.image,
+                  height: Math.random() * 100 + 100,
+                }}
+              />
+            </TouchableOpacity>
           );
         })}
       </View>

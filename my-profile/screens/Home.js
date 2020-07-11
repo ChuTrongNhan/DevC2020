@@ -1,21 +1,17 @@
 import React from "react";
-import { StyleSheet, View, Text, ScrollView } from "react-native";
-import Header from "../components/homeScreen/Header";
+import { StyleSheet, View, ScrollView } from "react-native";
 import UserInfo from "../components/homeScreen/UserInfo";
 import Stat from "../components/homeScreen/Stat";
 import Gallery from "../components/homeScreen/Gallery";
-import Footer from "../components/homeScreen/Footer";
 
 const Home = (props) => {
   return (
     <View style={styles.homeScreen}>
-      <Header goToFeed={props.goToFeed} />
       <ScrollView showsVerticalScrollIndicator={false}>
         <UserInfo />
         <Stat />
-        <Gallery />
+        <Gallery goTo={(screen) => props.goTo(screen)} />
       </ScrollView>
-      <Footer />
     </View>
   );
 };

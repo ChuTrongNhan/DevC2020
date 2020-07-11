@@ -23,7 +23,14 @@ const MyBlackText = (props) => {
     );
   }
   return (
-    <Text style={{ ...props.style, fontFamily: "sultan-nahia" }}>
+    <Text
+      style={{
+        ...props.style,
+        fontFamily: "sultan-nahia",
+        color: props.color ? props.color : "black",
+        fontSize: props.size ? props.size : 14,
+      }}
+    >
       {props.children}
     </Text>
   );
@@ -41,7 +48,13 @@ const MyText = (props) => {
     );
   }
   return (
-    <Text style={{ ...props.style, fontFamily: "avo-reg" }}>
+    <Text
+      style={{
+        ...props.style,
+        color: props.color ? props.color : "black",
+        fontSize: props.size ? props.size : 14,
+      }}
+    >
       {props.children}
     </Text>
   );
@@ -59,7 +72,14 @@ const MyBoldText = (props) => {
     );
   }
   return (
-    <Text style={{ ...props.style, fontFamily: "avo-bold" }}>
+    <Text
+      style={{
+        ...props.style,
+        fontFamily: "avo-bold",
+        color: props.color ? props.color : "black",
+        fontSize: props.size ? props.size : 14,
+      }}
+    >
       {props.children}
     </Text>
   );

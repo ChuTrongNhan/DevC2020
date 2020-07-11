@@ -1,18 +1,11 @@
 import React from "react";
-import {
-  StyleSheet,
-  View,
-  Text,
-  Image,
-  TouchableOpacity,
-  Alert,
-} from "react-native";
+import { StyleSheet, View, Image, TouchableOpacity, Alert } from "react-native";
 import { MyText, MyBoldText, MyBlackText } from "../MyText";
 import { MaterialIcons } from "@expo/vector-icons";
 
 const UserInfo = (props) => {
-  const userName = "Skye Gardner";
-  const userJob = "Photographer";
+  const userName = "Daisy Johnson";
+  const userJob = "Agent of shield";
 
   const followOnPress = () => {
     Alert.alert(
@@ -21,10 +14,9 @@ const UserInfo = (props) => {
       [
         {
           text: "Cancel",
-          onPress: () => console.log("Cancel Pressed"),
           style: "cancel",
         },
-        { text: "OK", onPress: () => console.log("OK Pressed") },
+        { text: "OK", onPress: () => {} },
       ],
       { cancelable: false }
     );
@@ -37,10 +29,9 @@ const UserInfo = (props) => {
       [
         {
           text: "Cancel",
-          onPress: () => console.log("Cancel Pressed"),
           style: "cancel",
         },
-        { text: "OK", onPress: () => console.log("OK Pressed") },
+        { text: "OK" },
       ],
       { cancelable: false }
     );
@@ -54,12 +45,16 @@ const UserInfo = (props) => {
       />
       <View style={styles.infos}>
         <View>
-          <MyBlackText style={styles.userName}>{userName}</MyBlackText>
-          <MyBoldText style={styles.userJob}>{userJob}</MyBoldText>
+          <MyBlackText style={styles.userName} size={36}>
+            {userName}
+          </MyBlackText>
+          <MyBlackText color="lightgray" size={18}>
+            {userJob}
+          </MyBlackText>
         </View>
         <View style={styles.buttons}>
           <TouchableOpacity style={styles.followButton} onPress={followOnPress}>
-            <MyText style={{ color: "white" }}>Follow</MyText>
+            <MyText color="white">Follow</MyText>
           </TouchableOpacity>
           <TouchableOpacity style={styles.sendButton} onPress={sendOnPress}>
             <MyText>
@@ -78,26 +73,23 @@ const SEND_MESSAGE_COLOR = "#94d7ff";
 const styles = StyleSheet.create({
   userInfo: {
     flexDirection: "row",
+    paddingTop: 20,
   },
   infoAvatar: {
     width: 110,
     height: 110,
     borderRadius: 90,
-    marginEnd: 20,
+    marginEnd: 10,
   },
   infos: {
     flexDirection: "column",
     justifyContent: "space-between",
     flex: 1,
+    padding: 5,
   },
   userName: {
-    fontSize: 36,
     marginBottom: -5,
     lineHeight: 36,
-  },
-  userJob: {
-    color: "lightgray",
-    fontSize: 15,
   },
   buttons: {
     flexDirection: "row",

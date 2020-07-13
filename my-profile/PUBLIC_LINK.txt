@@ -1,0 +1,2 @@
+The manifest URL is: https://exp.host/@dembatda/my-profile (​https://exp.host/@dembatda/my-profile/index.exp?sdkVersion=38.0.0​). 
+The project page is: https://expo.io/@dembatda/my-profile (​https://expo.io/@dembatda/my-profile​). 

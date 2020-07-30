@@ -17,15 +17,16 @@ const reducer = (state = [], action) => {
   switch (action.type) {
     case actions.TODO_ADD:
       return [
-        ...state,
         {
           id: idGenerate(),
           active: true,
           title: action.payload.title,
+          description: action.payload.description,
         },
+        ...state,
       ];
     case actions.TODO_REMOVE:
-      return state.filter((todo) => todo.id === action.payload.id);
+      return state.filter((todo) => todo.id != action.payload.id);
     case actions.TODO_TOGGLE:
       return state.map((todo) => ({
         ...todo,
